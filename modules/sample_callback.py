@@ -13,7 +13,8 @@ from .utils import rename_keys
 
 
 class SampleCallback(pl.Callback):
-    _CONFIG_TRANSFORM = {"cfg_scale": "guidance_scale", "steps": "num_inference_steps"}
+    _CONFIG_TRANSFORM = {"cfg_scale": "guidance_scale", "steps": "num_inference_steps",
+            "num_samples": None, "seed": None}
 
     def __init__(self, sample_save_dir: str | PathLike):
         self.sample_dir = Path(sample_save_dir)

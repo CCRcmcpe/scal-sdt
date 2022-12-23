@@ -23,7 +23,7 @@ def read_image(filepath: Path) -> Image.Image:
 
 
 def rename_keys(source: dict, key_dict: dict):
-    return {key_dict.get(k, k): v for k, v in source.items()}
+    return {key_dict.get(k, k): v for k, v in source.items() if key_dict.get(k, "") != None}
 
 
 def get_class(name: str):
